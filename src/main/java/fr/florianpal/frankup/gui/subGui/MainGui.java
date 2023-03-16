@@ -118,7 +118,7 @@ public class MainGui extends AbstractGui implements GuiInterface {
                 ItemStack needItemStack;
                 if (globalConfig.getDisplayItems().containsKey(need.getRankType().toString())) {
                     needItemStack = new ItemStack(globalConfig.getDisplayItems().get(need.getRankType().toString()), (int)need.getQuantity());
-                    if(need.getRankType() == RankType.EXPERIENCE || need.getRankType() == RankType.MONEY || need.getRankType() == RankType.POISSON) {
+                    if(need.getRankType() == RankType.EXPERIENCE || need.getRankType() == RankType.MONEY) {
                         needItemStack.setAmount(1);
                     }
                 } else {
@@ -129,12 +129,9 @@ public class MainGui extends AbstractGui implements GuiInterface {
 
                 List<String> descriptions = new ArrayList<>();
                 String title = "";
-                if (need.getRankType() == RankType.MMOITEMS || need.getRankType() == RankType.ECOITEM || need.getRankType() == RankType.MINECRAFT) {
+                if (need.getRankType() == RankType.MINECRAFT) {
                     descriptions = globalConfig.getDisplayDescriptions().get("item");
                     title = globalConfig.getDisplayTitles().get("item");
-                } else if (need.getRankType() == RankType.POISSON) {
-                    descriptions = globalConfig.getDisplayDescriptions().get("fish");
-                    title = globalConfig.getDisplayTitles().get("fish");
                 } else if (need.getRankType() == RankType.MONEY) {
                     descriptions = globalConfig.getDisplayDescriptions().get("money");
                     title = globalConfig.getDisplayTitles().get("money");
@@ -147,12 +144,6 @@ public class MainGui extends AbstractGui implements GuiInterface {
                 } else if (need.getRankType() == RankType.TOTAL_SKILLS) {
                     descriptions = globalConfig.getDisplayDescriptions().get("total_skills");
                     title = globalConfig.getDisplayTitles().get("total_skills");
-                } else if (need.getRankType() == RankType.COMPANY) {
-                    descriptions = globalConfig.getDisplayDescriptions().get("company");
-                    title = globalConfig.getDisplayTitles().get("company");
-                } else if (need.getRankType() == RankType.DIVERSITY) {
-                    descriptions = globalConfig.getDisplayDescriptions().get("diversity");
-                    title = globalConfig.getDisplayTitles().get("diversity");
                 }
 
                 String displayName = "";

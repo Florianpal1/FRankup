@@ -10,12 +10,10 @@ fr\florianpal\frankup\managers\VaultIntegrationManager.class
 fr\florianpal\frankup\configurations\RenameConfig.class
 fr\florianpal\frankup\gui\item\Confirm.class
 fr\florianpal\frankup\gui\AbstractGui.class
-fr\florianpal\frankup\objects\Fish.class
 fr\florianpal\frankup\objects\Rank.class
 fr\florianpal\frankup\managers\commandManagers\CommandManager.class
 fr\florianpal\frankup\objects\Need$1.class
 fr\florianpal\frankup\utils\FormatUtil.class
-fr\florianpal\frankup\configurations\FishConfig.class
 fr\florianpal\frankup\configurations\ConfirmGuiConfig.class
 fr\florianpal\frankup\enums\BarrierType.class
 fr\florianpal\frankup\enums\RankType.class

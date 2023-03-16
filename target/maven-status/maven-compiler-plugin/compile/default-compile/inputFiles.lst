@@ -4,11 +4,9 @@ D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\gui\GuiInterface.j
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\managers\VaultIntegrationManager.java
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\configurations\MainGuiConfig.java
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\enums\BarrierType.java
-D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\objects\Fish.java
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\gui\AbstractGui.java
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\configurations\GlobalConfig.java
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\configurations\RenameConfig.java
-D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\configurations\FishConfig.java
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\managers\ConfigurationManager.java
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\gui\item\Barrier.java
 D:\Mes plugins MC\FRankup\src\main\java\fr\florianpal\frankup\gui\subGui\ConfirmGui.java

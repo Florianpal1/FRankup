@@ -6,17 +6,12 @@ status:
 
 titles:
   item: "{Status} {DisplayNameItem} * {Quantity}"
-  fish: "{Status} {DisplayNameItem} * {Quantity}"
   money: "{Status} Argent * {Quantity}"
   experience: "{Status} Expérience * {Quantity}"
   skills: "{Status} Skills {DisplayNameItem} {Quantity}"
   total_skills: "{Status} Skills {Quantity}"
-  company: "{Status} Entreprise de niveau {Quantity}"
-  diversity: "{Status} Note de diversité inférieur à {Quantity}"
 descriptions:
   item:
-    - "Vous devez possèder {Quantity} de {DisplayNameItem}."
-  fish:
     - "Vous devez possèder {Quantity} de {DisplayNameItem}."
   money:
     - "Vous devez possèder {Quantity} d'argent."
@@ -26,16 +21,10 @@ descriptions:
     - "Vous devez possèder {Quantity} de niveau dans le skills {DisplayNameItem}."
   total_skills:
     - "Vous devez possèder {Quantity} de niveau dans tous les skills."
-  company:
-    - "Vous devez possèder une entreprise de niveau {Quantity}."
-  diversity:
-    - "Vous devez possèder une note de diversité en dessous de {Quantity}."
 display:
   MONEY: "GOLD_INGOT"
   EXPERIENCE: "EXPERIENCE_BOTTLE"
   SKILLS: "DIAMOND_SWORD"
   TOTAL_SKILLS: "DIAMOND_SWORD"
-  COMPANY: "COBBLESTONE"
-  DIVERSITY: "GOLD_BLOCK"
 
 broadcast: "Le joueur {PlayerName} est monté au grade {GradeName}"

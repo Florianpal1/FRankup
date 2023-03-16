@@ -50,8 +50,6 @@ public class ConfigurationManager {
     private final ConfirmGuiConfig confirmConfig = new ConfirmGuiConfig();
     private FileConfiguration confirmConfiguration;
     File confirmFile;
-
-    private final FishConfig fishConfig = new FishConfig();
     private FileConfiguration fishConfiguration;
     File fishFile;
 
@@ -87,8 +85,7 @@ public class ConfigurationManager {
         renameConfiguration = YamlConfiguration.loadConfiguration(renameFile);
 
         renameConfig.load(renameConfiguration);
-        fishConfig.load(fishConfiguration);
-        rankupConfig.load(rankupConfiguration, fishConfig);
+        rankupConfig.load(rankupConfiguration);
         globalConfig.load(globalConfiguration);
         mainGuiConfig.load(mainGuiConfiguration);
     }
@@ -102,9 +99,8 @@ public class ConfigurationManager {
         renameConfiguration = YamlConfiguration.loadConfiguration(renameFile);
 
         renameConfig.load(renameConfiguration);
-        fishConfig.load(fishConfiguration);
         confirmConfig.load(confirmConfiguration);
-        rankupConfig.load(rankupConfiguration, fishConfig);
+        rankupConfig.load(rankupConfiguration);
         globalConfig.load(globalConfiguration);
         mainGuiConfig.load(mainGuiConfiguration);
     }
@@ -128,10 +124,6 @@ public class ConfigurationManager {
 
     public ConfirmGuiConfig getConfirmConfig() {
         return confirmConfig;
-    }
-
-    public FishConfig getFishConfig() {
-        return fishConfig;
     }
 
     public RenameConfig getRenameConfig() {
