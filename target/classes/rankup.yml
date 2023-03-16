@@ -1,0 +1,31 @@
+ranks:
+  default:
+    displayName: "&aChevalier"
+    displayItem: "IRON_INGOT"
+    nextGrade: "chevalier"
+    barrierMaterial: "GRAY_STAINED_GLASS_PANE"
+    needs:
+      - "minecraft:IRON_INGOT:2"
+      - "minecraft:COAL:2"
+      - "money:money:100"
+      - "totalSkills:totalSkills:520"
+      - "totalSkills:totalSkills:2"
+      - "diversity:diversity:1.2"
+    results:
+      - "command:lp user {PlayerName} promote joueurs"
+  chevalier:
+    displayName: "&aBaron"
+    displayItem: "IRON_INGOT"
+    nextGrade: "Baron"
+    barrierMaterial: "GRAY_STAINED_GLASS_PANE"
+    needs:
+      - "minecraft:IRON_INGOT:2"
+      - "minecraft:COAL:2"
+      - "money:money:100"
+      - "exp:exp:1"
+      - "skills:farming:5"
+      - "fish:clown:1"
+      - "totalSkills:totalSkills:8"
+      - "company:company:4"
+    results:
+      - "command:lp user {PlayerName} promote joueurs"
