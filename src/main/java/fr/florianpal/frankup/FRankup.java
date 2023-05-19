@@ -4,6 +4,7 @@ import fr.florianpal.frankup.commands.RankupCommand;
 import fr.florianpal.frankup.managers.ConfigurationManager;
 import fr.florianpal.frankup.managers.VaultIntegrationManager;
 import fr.florianpal.frankup.managers.commandManagers.CommandManager;
+import fr.florianpal.frankup.placeholders.FPlaceholderExpansion;
 import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -44,6 +45,12 @@ public class FRankup extends JavaPlugin {
         }
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "fannounce:announce");
+
+        if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new FPlaceholderExpansion(this).register();
+        } else {
+            System.out.println("Error : PlaceholderAPI not found !");
+        }
     }
 
     public void createDefaultConfiguration(File actual, String defaultName) {
@@ -110,4 +117,5 @@ public class FRankup extends JavaPlugin {
     public LuckPerms getLuckPerms() {
         return luckPerms;
     }
+
 }

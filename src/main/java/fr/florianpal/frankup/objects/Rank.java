@@ -24,8 +24,6 @@ public class Rank {
     private final LinkedHashMap<String, Need> needs;
     private final List<String> result;
 
-    NamespacedKey FISH_WEIGHT_FLAG = new NamespacedKey(Bukkit.getPluginManager().getPlugin("NoOneFishing"), "nf-fish-weight");
-    NamespacedKey FISH_NAME_FLAG = new NamespacedKey(Bukkit.getPluginManager().getPlugin("NoOneFishing"), "nf-fish-name");
     public Rank(String displayName, String displayItem, String nextGrade, Material barrierMaterial, LinkedHashMap<String, Need> needs, List<String> result) {
         this.displayName = displayName;
         this.displayItem = displayItem;

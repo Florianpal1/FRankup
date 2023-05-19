@@ -50,8 +50,6 @@ public class ConfigurationManager {
     private final ConfirmGuiConfig confirmConfig = new ConfirmGuiConfig();
     private FileConfiguration confirmConfiguration;
     File confirmFile;
-    private FileConfiguration fishConfiguration;
-    File fishFile;
 
     private final RenameConfig renameConfig = new RenameConfig();
     private final File renameFile;
@@ -76,10 +74,6 @@ public class ConfigurationManager {
         core.createDefaultConfiguration(confirmFile, "confirmGui.yml");
         confirmConfiguration = YamlConfiguration.loadConfiguration(confirmFile);
 
-        fishFile = new File(core.getDataFolder(), "fish.yml");
-        core.createDefaultConfiguration(fishFile, "fish.yml");
-        fishConfiguration = YamlConfiguration.loadConfiguration(fishFile);
-
         renameFile = new File(core.getDataFolder(), "rename.yml");
         core.createDefaultConfiguration(renameFile, "rename.yml");
         renameConfiguration = YamlConfiguration.loadConfiguration(renameFile);
@@ -95,7 +89,6 @@ public class ConfigurationManager {
         globalConfiguration = YamlConfiguration.loadConfiguration(globalFile);
         rankupConfiguration = YamlConfiguration.loadConfiguration(rankupFile);
         confirmConfiguration = YamlConfiguration.loadConfiguration(confirmFile);
-        fishConfiguration = YamlConfiguration.loadConfiguration(fishFile);
         renameConfiguration = YamlConfiguration.loadConfiguration(renameFile);
 
         renameConfig.load(renameConfiguration);
