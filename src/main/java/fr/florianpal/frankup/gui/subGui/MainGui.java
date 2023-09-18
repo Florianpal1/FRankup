@@ -167,11 +167,11 @@ public class MainGui extends AbstractGui implements GuiInterface {
                     }
                 }
 
+                DecimalFormat df = new DecimalFormat();
+                df.setMaximumFractionDigits(0);
                 List<String> descriptionsFormatted = new ArrayList<>();
                 for (String desc : descriptions) {
                     desc = desc.replace("{DisplayNameItem}", FormatUtil.formatWithout(displayName));
-                    DecimalFormat df = new DecimalFormat();
-                    df.setMaximumFractionDigits(0);
                     desc = desc.replace("{Quantity}", df.format(need.getQuantity()));
                     if (need.getStatus(player, plugin.getVaultIntegrationManager().getEconomy())) {
                         desc = desc.replace("{Status}", globalConfig.getValid());
@@ -184,7 +184,7 @@ public class MainGui extends AbstractGui implements GuiInterface {
                 }
 
                 title = title.replace("{DisplayNameItem}", FormatUtil.formatWithout(displayName));
-                title = title.replace("{Quantity}", String.valueOf(need.getQuantity()));
+                title = title.replace("{Quantity}", df.format(need.getQuantity()));
                 if (need.getStatus(player, plugin.getVaultIntegrationManager().getEconomy())) {
                     title = title.replace("{Status}", globalConfig.getValid());
                 } else {
