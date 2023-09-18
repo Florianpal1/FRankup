@@ -1,3 +1,9 @@
 item:
   IRON_INGOT: "Lingot de fer"
   COAL: "Charbon"
+  HEART_OF_THE_SEA: "&aCoeur de la mer"
+  CREEPER_HEAD: "&aTête de creeper"
+  ZOMBIE_HEAD: "&aTête de zombie"
+  ENCHANTED_GOLDEN_APPLE: "&dPomme dorée enchantée"
+  DRAGON_EGG: "&dOeuf de dragon"
+

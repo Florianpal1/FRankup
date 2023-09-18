@@ -1,300 +1,291 @@
 gui:
   size: 54
-  name: "Rankup pour être {DisplayName}"
+  name: "Passer au grade {DisplayName}"
 rankRemplacement:
   material: GRAY_STAINED_GLASS_PANE
-  title: "-"
+  title: " "
   description: { }
 block:
   '0':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '1':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '2':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '3':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '4':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '5':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '6':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '7':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: ""
     description: {}
   '8':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '9':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: {}
   '10':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
-    description: { }
+    utility: rank
   '11':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '12':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
-    description: { }
+    utility: rank
   '13':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '14':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
-    description: { }
+    utility: rank
   '15':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '16':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
-    description: { }
+    utility: rank
   '17':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: RANK
-    title: "-"
-    description: {}
+    title: " "
+    description: { }
   '18':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: RANK
-    title: "-"
+    title: " "
     description: { }
   '19':
-    utility: rank
+    utility: barrier
+    material: GRAY_STAINED_GLASS_PANE
+    type: RANK
+    title: " "
+    description: { }
   '20':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: RANK
-    title: "-"
-    description: { }
+    utility: rank
   '21':
-    utility: rank
+    utility: barrier
+    material: GRAY_STAINED_GLASS_PANE
+    type: RANK
+    title: " "
+    description: { }
   '22':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: RANK
-    title: "-"
-    description: { }
+    utility: rank
   '23':
-    utility: rank
-  '24':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: RANK
-    title: "-"
+    title: " "
     description: { }
-  '25':
+  '24':
     utility: rank
+  '25':
+    utility: barrier
+    material: GRAY_STAINED_GLASS_PANE
+    type: RANK
+    title: " "
+    description: { }
   '26':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: RANK
-    title: "-"
+    title: " "
     description: { }
   '27':
-    utility: rank
-  '28':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
-    description: { }
-  '29':
-    utility: rank
-  '30':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
-    description: { }
-  '31':
-    utility: rank
-  '32':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
-    description: { }
-  '33':
-    utility: rank
-  '34':
-    utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
-    description: { }
-  '35':
-    utility: confirm
-    material: GREEN_WOOL
     type: RANK
-    title: "&aConfirmer le Rankup"
+    title: " "
+    description: { }
+  '28':
+    utility: rank
+  '29':
+    utility: barrier
+    material: GRAY_STAINED_GLASS_PANE
+    type: RANK
+    title: " "
+    description: { }
+  '30':
+    utility: rank
+  '31':
+    utility: barrier
+    material: GRAY_STAINED_GLASS_PANE
+    type: RANK
+    title: " "
+    description: { }
+  '32':
+    utility: rank
+  '33':
+    utility: barrier
+    material: GRAY_STAINED_GLASS_PANE
+    type: RANK
+    title: " "
+    description: { }
+  '34':
+    utility: rank
+  '35':
+    utility: barrier
+    material: GRAY_STAINED_GLASS_PANE
+    type: RANK
+    title: " "
     description: {}
   '36':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: RANK
-    title: "-"
+    title: " "
     description: {}
   '37':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '38':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '39':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '40':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '41':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '42':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '43':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
-    type: BARRIER
-    title: "-"
+    type: RANK
+    title: " "
     description: { }
   '44':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: RANK
-    title: "-"
+    title: " "
     description: {}
   '45':
     utility: barrier
-    material: GRAY_STAINED_GLASS_PANE
+    material: NETHER_STAR
     type: BARRIER
-    title: "-"
-    description: { }
+    title: "&aInformations"
+    description:
+      - "&7Voici la liste des prérequis"
+      - "&7pour monter votre grade."
+      - "&7Les suns et les objets seront"
+      - "&7directement retirés sur vous."
   '46':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: BARRIER
-    title: "-"
+    title: " "
     description: { }
   '47':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: BARRIER
-    title: "-"
+    title: " "
     description: { }
   '48':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: BARRIER
-    title: "-"
+    title: " "
     description: { }
   '49':
-    utility: barrier
-    material: NETHER_STAR
-    type: BARRIER
-    title: "Informations"
-    description:
-      - "&7Bienvenue dans le rankup"
+    utility: confirm
+    material: LIME_CONCRETE
+    type: RANK
+    title: "&aConfirmer le Rankup"
+    description: {}
   '50':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: BARRIER
-    title: "-"
+    title: " "
     description: { }
   '51':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: BARRIER
-    title: "-"
+    title: " "
     description: { }
   '52':
     utility: barrier
     material: GRAY_STAINED_GLASS_PANE
     type: BARRIER
-    title: "-"
+    title: " "
     description: { }
   '53':
     utility: close
     material: BARRIER
-    title: "Fermer"
+    title: "&cFermer"
     description: {}

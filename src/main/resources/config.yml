@@ -1,41 +1,44 @@
 lang: "fr"
 
 status:
-  valid: "&a[Valider]"
-  notValid: "&c[Non Valider]"
+  valid: "&a[Validé]"
+  notValid: "&c[Non Validé]"
 
 titles:
-  item: "{Status} {DisplayNameItem} * {Quantity}"
-  fish: "{Status} {DisplayNameItem} * {Quantity}"
-  money: "{Status} Argent * {Quantity}"
+  item: "{Status} &a{Quantity} x &7{DisplayNameItem}"
+  money: "{Status} &a{Quantity} suns"
   experience: "{Status} Expérience * {Quantity}"
   skills: "{Status} Skills {DisplayNameItem} {Quantity}"
-  total_skills: "{Status} Skills {Quantity}"
-  company: "{Status} Entreprise de niveau {Quantity}"
-  diversity: "{Status} Note de diversité inférieur à {Quantity}"
+  total_skills: "{Status} &a{Quantity} &7niveaux de compétence ( en tout )"
+  company: "{Status} &7Appartenir ou avoir créé une entreprise de niveau &a4"
+  diversity: "{Status} &7Note de diversité inférieur à &a{Quantity}"
+  fish: "{Status} {DisplayNameItem} &7( > &a{Quantity} &7lbs)"
 descriptions:
   item:
-    - "Vous devez possèder {Quantity} de {DisplayNameItem}."
-  fish:
-    - "Vous devez possèder {Quantity} de {DisplayNameItem}."
+    - "&7Vous devez posséder &a{Quantity} {DisplayNameItem}."
   money:
-    - "Vous devez possèder {Quantity} d'argent."
+    - "&7Vous devez posséder &a{Quantity} suns."
   experience:
-    - "Vous devez possèder {Quantity} d'expérience."
+    - "&7Vous devez posséder {Quantity} d'expérience."
   skills:
-    - "Vous devez possèder {Quantity} de niveau dans le skills {DisplayNameItem}."
+    - "&7Vous devez posséder {Quantity} de niveau dans le skills {DisplayNameItem}."
   total_skills:
-    - "Vous devez possèder {Quantity} de niveau dans tous les skills."
+    - "&7Vous devez posséder &a{Quantity} &7niveaux de compétence,"
+    - "&7toutes compétences cumulées."
   company:
-    - "Vous devez possèder une entreprise de niveau {Quantity}."
+    - "&7Vous devez posséder ou être dans une entreprise de niveau &a4."
   diversity:
-    - "Vous devez possèder une note de diversité en dessous de {Quantity}."
+    - "&7Vôtre note de diversité doit être en dessous de &a{Quantity}."
+  fish:
+    - "&7Vous devez posséder un {DisplayNameItem}"
+    - "&7dont le poids est supérieur à &a{Quantity}"
+    - "&7Obtenable au warp custom !"
 display:
-  MONEY: "GOLD_INGOT"
+  MONEY: "EMERALD"
   EXPERIENCE: "EXPERIENCE_BOTTLE"
   SKILLS: "DIAMOND_SWORD"
   TOTAL_SKILLS: "DIAMOND_SWORD"
-  COMPANY: "COBBLESTONE"
-  DIVERSITY: "GOLD_BLOCK"
+  COMPANY: "END_PORTAL_FRAME"
+  DIVERSITY: "END_CRYSTAL"
 
-broadcast: "Le joueur {PlayerName} est monté au grade {GradeName}"
+broadcast: "&3&lRankup &7» &6***Félicitations à &6&n{PlayerName}&6*** &aQui vient de passer {GradeName} &a!"
