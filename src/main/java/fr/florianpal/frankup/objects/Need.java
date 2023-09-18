@@ -6,14 +6,13 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import com.willfp.ecoitems.items.EcoItem;
 import com.willfp.ecoitems.items.EcoItems;
+import fr.florianpal.fentreprise.FEntreprise;
+import fr.florianpal.fentreprise.objects.Entreprise;
 import fr.florianpal.frankup.configurations.FishConfig;
 import fr.florianpal.frankup.enums.RankType;
 import fr.florianpal.frankup.utils.FormatUtil;
-import io.github.apfelcreme.Guilds.Guilds;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.Indyuce.mmoitems.MMOItems;
-import net.Indyuce.mmoitems.api.item.mmoitem.MMOItem;
-import net.Indyuce.mmoitems.manager.ItemManager;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -47,7 +46,6 @@ public class Need {
 
         switch (strings[0]) {
             case "exp" -> rankType = RankType.EXPERIENCE;
-            case "ecoitem" -> rankType = RankType.ECOITEM;
             case "mmoitems" -> rankType = RankType.MMOITEMS;
             case "money" -> rankType = RankType.MONEY;
             case "fish" -> rankType = RankType.POISSON;
@@ -81,13 +79,6 @@ public class Need {
         return id;
     }
 
-    public EcoItem getEcoItem() {
-        if(rankType == RankType.ECOITEM) {
-            return EcoItems.getByID(itemName.toLowerCase());
-        }
-        return null;
-    }
-
     public ItemStack getMMOItem() {
         if(rankType == RankType.MMOITEMS) {
             return MMOItems.plugin.getItem(MMOItems.plugin.getTypes().get(mmoItemType.toUpperCase()),itemName);
@@ -99,15 +90,7 @@ public class Need {
 
         ItemStack itemStack;
         try {
-            if (rankType == RankType.ECOITEM) {
-                ItemStack ecoItem = EcoItems.getByID(itemName.toLowerCase()).getItemStack();
-                itemStack = new ItemStack(ecoItem.getType());
-                itemStack.setAmount((int)quantity);
-                ItemMeta itemMeta = itemStack.getItemMeta();
-                itemMeta.displayName(ecoItem.displayName());
-                itemStack.setItemMeta(itemMeta);
-
-            } else if (rankType == RankType.MMOITEMS) {
+            if (rankType == RankType.MMOITEMS) {
                 ItemStack mmoItem = getMMOItem();
                 itemStack = new ItemStack(mmoItem.getType());
                 itemStack.setAmount((int)quantity);
@@ -143,7 +126,7 @@ public class Need {
 
     public boolean getStatus(Player player, Economy economy) {
         switch (rankType) {
-            case MINECRAFT, ECOITEM, MMOITEMS -> {
+            case MINECRAFT, MMOITEMS -> {
                 int sum = (int)quantity;
                 for (int i = 0; i < player.getInventory().getContents().length; i++) {
 
@@ -152,8 +135,8 @@ public class Need {
                         continue;
                     }
 
-                    EcoItem ecoItem = getEcoItem();
-                    if ((ecoItem != null && ecoItem.getCustomItem().matches(itemStack)) || itemStack.isSimilar(getItemStack())) {
+                    ItemStack mmoItem = getMMOItem();
+                    if (itemStack.isSimilar(getItemStack()) || (mmoItem != null && mmoItem.isSimilar(itemStack))) {
                         if (itemStack.getAmount() > sum) {
                             sum = 0;
                         } else if (itemStack.getAmount() == sum) {
@@ -196,8 +179,8 @@ public class Need {
             } case TOTAL_SKILLS -> {
                 return AureliumAPI.getTotalLevel(player) >= quantity;
             } case COMPANY -> {
-                return (Guilds.getStaticGuildManager().getGuild(player.getUniqueId()) == null || Guilds.getStaticGuildManager().getGuild(player.getUniqueId()).getCurrentLevel().getLevel() > quantity)
-                        || (Guilds.getStaticGuildManager().getGuildMember(player.getUniqueId()) == null || Guilds.getStaticGuildManager().getGuildMember(player.getUniqueId()).getGuild().getCurrentLevel().getLevel() > quantity);
+                Entreprise entreprise = FEntreprise.getEntrepriseByUUID(player);
+                return (entreprise != null && entreprise.getLevel() >= quantity);
             } case DIVERSITY -> {
                 return (parseDouble(PlaceholderAPI.setPlaceholders(player, "%luckperms_meta_karma%"))) < quantity;
             }

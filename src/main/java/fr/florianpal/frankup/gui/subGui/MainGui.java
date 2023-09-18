@@ -43,6 +43,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -129,7 +130,7 @@ public class MainGui extends AbstractGui implements GuiInterface {
 
                 List<String> descriptions = new ArrayList<>();
                 String title = "";
-                if (need.getRankType() == RankType.MMOITEMS || need.getRankType() == RankType.ECOITEM || need.getRankType() == RankType.MINECRAFT) {
+                if (need.getRankType() == RankType.MMOITEMS || need.getRankType() == RankType.MINECRAFT) {
                     descriptions = globalConfig.getDisplayDescriptions().get("item");
                     title = globalConfig.getDisplayTitles().get("item");
                 } else if (need.getRankType() == RankType.POISSON) {
@@ -169,7 +170,9 @@ public class MainGui extends AbstractGui implements GuiInterface {
                 List<String> descriptionsFormatted = new ArrayList<>();
                 for (String desc : descriptions) {
                     desc = desc.replace("{DisplayNameItem}", FormatUtil.formatWithout(displayName));
-                    desc = desc.replace("{Quantity}", String.valueOf(need.getQuantity()));
+                    DecimalFormat df = new DecimalFormat();
+                    df.setMaximumFractionDigits(0);
+                    desc = desc.replace("{Quantity}", df.format(need.getQuantity()));
                     if (need.getStatus(player, plugin.getVaultIntegrationManager().getEconomy())) {
                         desc = desc.replace("{Status}", globalConfig.getValid());
                     } else {

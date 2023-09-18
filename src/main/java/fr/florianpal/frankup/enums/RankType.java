@@ -2,7 +2,6 @@ package fr.florianpal.frankup.enums;
 
 public enum RankType {
     MINECRAFT,
-    ECOITEM,
     MMOITEMS,
     MONEY,
     POISSON,

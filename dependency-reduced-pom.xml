@@ -81,6 +81,10 @@
       <id>vault-repo</id>
       <url>https://nexus.hc.to/content/repositories/pub_releases</url>
     </repository>
+    <repository>
+      <id>eco-repo</id>
+      <url>https://repo.auxilor.io/repository/maven-public/</url>
+    </repository>
   </repositories>
   <dependencies>
     <dependency>
@@ -93,6 +97,24 @@
       <groupId>io.papermc.paper</groupId>
       <artifactId>paper-api</artifactId>
       <version>1.19.2-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.willfp</groupId>
+      <artifactId>EcoItems</artifactId>
+      <version>5.5.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.willfp</groupId>
+      <artifactId>eco</artifactId>
+      <version>6.63.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.willfp</groupId>
+      <artifactId>libreforge</artifactId>
+      <version>4.20.0</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -120,25 +142,11 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.willfp</groupId>
-      <artifactId>EcoItems</artifactId>
-      <version>3.48.0</version>
+      <groupId>fr.florianpal.fentreprise</groupId>
+      <artifactId>FEntreprise</artifactId>
+      <version>1.2</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/lib/EcoItems v3.48.0.jar</systemPath>
-    </dependency>
-    <dependency>
-      <groupId>com.willfp</groupId>
-      <artifactId>Eco</artifactId>
-      <version>6.25.2</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/lib/eco-6.35.2-all.jar</systemPath>
-    </dependency>
-    <dependency>
-      <groupId>io.github.apfelcreme</groupId>
-      <artifactId>Guilds</artifactId>
-      <version>1.4.0</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/lib/Guilds.jar</systemPath>
+      <systemPath>${project.basedir}/lib/FEntreprise-1.2-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>net.Indyuce</groupId>

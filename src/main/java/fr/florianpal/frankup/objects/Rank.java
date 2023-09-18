@@ -3,13 +3,11 @@ package fr.florianpal.frankup.objects;
 import com.archyx.aureliumskills.api.AureliumAPI;
 import com.archyx.aureliumskills.skills.Skills;
 import com.willfp.ecoitems.items.EcoItem;
+import fr.florianpal.fentreprise.FEntreprise;
+import fr.florianpal.fentreprise.objects.Entreprise;
 import fr.florianpal.frankup.FRankup;
 import fr.florianpal.frankup.enums.RankType;
-import fr.florianpal.frankup.utils.FormatUtil;
-import io.github.apfelcreme.Guilds.Guild.Guild;
-import io.github.apfelcreme.Guilds.Guilds;
 import me.clip.placeholderapi.PlaceholderAPI;
-import net.Indyuce.mmoitems.api.item.mmoitem.MMOItem;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -70,7 +68,7 @@ public class Rank {
 
     public boolean playerCanMake(Player player, FRankup fRankup) {
         for(Map.Entry<String, Need> entry : needs.entrySet()) {
-            if(entry.getValue().getRankType() == RankType.MMOITEMS ||  entry.getValue().getRankType() == RankType.ECOITEM || entry.getValue().getRankType() == RankType.MINECRAFT) {
+            if(entry.getValue().getRankType() == RankType.MMOITEMS || entry.getValue().getRankType() == RankType.MINECRAFT) {
                 int quantity = 0;
                 for(ItemStack itemStack : player.getInventory().getContents()) {
                     if(itemStack == null) {
@@ -78,8 +76,7 @@ public class Rank {
                     }
 
                     ItemStack mmoItem = entry.getValue().getMMOItem();
-                    EcoItem ecoItem = entry.getValue().getEcoItem();
-                    if((ecoItem != null && ecoItem.getCustomItem().matches(itemStack)) || itemStack.isSimilar(entry.getValue().getItemStack()) || (mmoItem != null && mmoItem.isSimilar(itemStack))) {
+                    if(itemStack.isSimilar(entry.getValue().getItemStack()) || (mmoItem != null && mmoItem.isSimilar(itemStack))) {
                         quantity = quantity + itemStack.getAmount();
                     }
                 }
@@ -121,9 +118,8 @@ public class Rank {
                     return false;
                 }
             } else if (entry.getValue().getRankType() == RankType.COMPANY) {
-                if((Guilds.getStaticGuildManager().getGuild(player.getUniqueId()) == null || Guilds.getStaticGuildManager().getGuild(player.getUniqueId()).getCurrentLevel().getLevel() < entry.getValue().getQuantity())
-                        || (Guilds.getStaticGuildManager().getGuildMember(player.getUniqueId()) == null || Guilds.getStaticGuildManager().getGuildMember(player.getUniqueId()).getGuild().getCurrentLevel().getLevel() < entry.getValue().getQuantity())
-                ) {
+                Entreprise entreprise = FEntreprise.getEntrepriseByUUID(player);
+                if((entreprise == null || entreprise.getLevel() < entry.getValue().getQuantity())) {
                     return false;
                 }
             } else if (entry.getValue().getRankType() == RankType.DIVERSITY) {
@@ -137,7 +133,7 @@ public class Rank {
 
     public void playerTake(Player player, FRankup fRankup) {
         for (Map.Entry<String, Need> entry : needs.entrySet()) {
-            if (entry.getValue().getRankType() == RankType.MMOITEMS || entry.getValue().getRankType() == RankType.ECOITEM || entry.getValue().getRankType() == RankType.MINECRAFT) {
+            if (entry.getValue().getRankType() == RankType.MMOITEMS || entry.getValue().getRankType() == RankType.MINECRAFT) {
                 int quantity = (int)entry.getValue().getQuantity();
                 for (int i = 0; i < player.getInventory().getContents().length; i++) {
 
@@ -147,8 +143,7 @@ public class Rank {
                     }
 
                     ItemStack mmoItem = entry.getValue().getMMOItem();
-                    EcoItem ecoItem = entry.getValue().getEcoItem();
-                    if ((ecoItem != null && ecoItem.getCustomItem().matches(itemStack)) || itemStack.isSimilar(entry.getValue().getItemStack()) || (mmoItem != null && mmoItem.isSimilar(itemStack))) {
+                    if (itemStack.isSimilar(entry.getValue().getItemStack()) || (mmoItem != null && mmoItem.isSimilar(itemStack))) {
                         if (itemStack.getAmount() > quantity) {
                             itemStack.setAmount(itemStack.getAmount() - quantity);
                             break;
