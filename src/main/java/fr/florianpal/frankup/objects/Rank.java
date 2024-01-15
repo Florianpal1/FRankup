@@ -2,7 +2,8 @@ package fr.florianpal.frankup.objects;
 
 import com.archyx.aureliumskills.api.AureliumAPI;
 import com.archyx.aureliumskills.skills.Skills;
-import com.willfp.ecoitems.items.EcoItem;
+import de.tr7zw.changeme.nbtapi.NBTCompound;
+import de.tr7zw.changeme.nbtapi.NBTItem;
 import fr.florianpal.fentreprise.FEntreprise;
 import fr.florianpal.fentreprise.objects.Entreprise;
 import fr.florianpal.frankup.FRankup;
@@ -14,7 +15,6 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.persistence.PersistentDataType;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -31,8 +31,6 @@ public class Rank {
     private final LinkedHashMap<String, Need> needs;
     private final List<String> result;
 
-    NamespacedKey FISH_WEIGHT_FLAG = new NamespacedKey(Bukkit.getPluginManager().getPlugin("NoOneFishing"), "nf-fish-weight");
-    NamespacedKey FISH_NAME_FLAG = new NamespacedKey(Bukkit.getPluginManager().getPlugin("NoOneFishing"), "nf-fish-name");
     public Rank(String displayName, String displayItem, String nextGrade, Material barrierMaterial, LinkedHashMap<String, Need> needs, List<String> result) {
         this.displayName = displayName;
         this.displayItem = displayItem;
@@ -102,13 +100,17 @@ public class Rank {
                         continue;
                     }
 
-                    String namespacedKeyName = itemStack.getItemMeta().getPersistentDataContainer().get(FISH_NAME_FLAG, PersistentDataType.STRING);
-                    Float namespacedKeyWeight = itemStack.getItemMeta().getPersistentDataContainer().get(FISH_WEIGHT_FLAG, PersistentDataType.FLOAT);
+                    NBTItem nbti = new NBTItem(itemStack);
+                    NBTCompound nbtCompound = nbti.getCompound("CustomFishing");
+                    String name = nbti.getString("MMOITEMS_ITEM_ID");
 
-                    if(namespacedKeyName != null && namespacedKeyName.equalsIgnoreCase(fRankup.getConfigurationManager().getFishConfig().getRanks().get(entry.getValue().getItemName()).getName()) && namespacedKeyWeight!= null && namespacedKeyWeight >= entry.getValue().getQuantity()) {
-                        take = true;
+                    if (nbtCompound != null && name != null && nbtCompound.hasTag("size")) {
+                        float size = nbtCompound.getFloat("size");
+
+                        if (name.equalsIgnoreCase(entry.getValue().getItemName()) && size >= entry.getValue().getQuantity()) {
+                            take = true;
+                        }
                     }
-
                 }
                 if(!take) {
                     return false;
@@ -168,17 +170,20 @@ public class Rank {
                         continue;
                     }
 
-                    String namespacedKeyName = itemStack.getItemMeta().getPersistentDataContainer().get(FISH_NAME_FLAG, PersistentDataType.STRING);
-                    Float namespacedKeyWeight = itemStack.getItemMeta().getPersistentDataContainer().get(FISH_WEIGHT_FLAG, PersistentDataType.FLOAT);
+                    NBTItem nbti = new NBTItem(itemStack);
+                    NBTCompound nbtCompoundC = nbti.getCompound("CustomFishing");
+                    String name = nbti.getString("MMOITEMS_ITEM_ID");
 
-                    if (namespacedKeyName != null && namespacedKeyName.equalsIgnoreCase(fRankup.getConfigurationManager().getFishConfig().getRanks().get(entry.getValue().getItemName()).getName()) && namespacedKeyWeight != null && namespacedKeyWeight >= entry.getValue().getQuantity()) {
-                        if(itemStack.getAmount() > 1) {
-                            itemStack.setAmount(itemStack.getAmount() - 1);
-                        } else {
-                            player.getInventory().setItem(i, null);
+                    if (nbtCompoundC != null && name != null && nbtCompoundC.hasTag("size")) {
+                        float size = nbtCompoundC.getFloat("size");
+
+                        if (name.equalsIgnoreCase(entry.getValue().getItemName()) && size >= entry.getValue().getQuantity()) {
+                            if(itemStack.getAmount() > 1) {
+                                itemStack.setAmount(itemStack.getAmount() - 1);
+                            } else {
+                                player.getInventory().setItem(i, null);
+                            }
                         }
-
-                        break;
                     }
                 }
 

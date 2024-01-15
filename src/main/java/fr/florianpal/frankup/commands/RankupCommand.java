@@ -41,7 +41,7 @@ public class RankupCommand extends BaseCommand {
     @Description("{@@frankup.reload_help_description}")
     public void onReload(Player playerSender) {
         CommandIssuer issuerTarget = commandManager.getCommandIssuer(playerSender);
-        plugin.reloadConfig();
+        plugin.reloadConfiguration();
         issuerTarget.sendInfo(MessageKeys.RELOAD);
     }
 

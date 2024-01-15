@@ -90,8 +90,7 @@ public class FRankup extends JavaPlugin {
         }
     }
 
-    @Override
-    public void reloadConfig() {
+    public void reloadConfiguration() {
         configurationManager.reload();
     }
 

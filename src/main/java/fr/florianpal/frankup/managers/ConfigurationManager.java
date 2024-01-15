@@ -20,16 +20,11 @@ import fr.florianpal.frankup.FRankup;
 import fr.florianpal.frankup.configurations.*;
 import fr.florianpal.frankup.objects.Rank;
 import me.clip.placeholderapi.PlaceholderAPI;
-import net.luckperms.api.model.group.Group;
-import net.luckperms.api.model.user.User;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.FishHook;
 import org.bukkit.entity.Player;
 
 import java.io.File;
-import java.util.Collection;
-import java.util.Map;
 
 public class ConfigurationManager {
 
@@ -50,8 +45,6 @@ public class ConfigurationManager {
     private final ConfirmGuiConfig confirmConfig = new ConfirmGuiConfig();
     private FileConfiguration confirmConfiguration;
     File confirmFile;
-
-    private final FishConfig fishConfig = new FishConfig();
     private FileConfiguration fishConfiguration;
     File fishFile;
 
@@ -87,8 +80,7 @@ public class ConfigurationManager {
         renameConfiguration = YamlConfiguration.loadConfiguration(renameFile);
 
         renameConfig.load(renameConfiguration);
-        fishConfig.load(fishConfiguration);
-        rankupConfig.load(rankupConfiguration, fishConfig);
+        rankupConfig.load(rankupConfiguration);
         globalConfig.load(globalConfiguration);
         mainGuiConfig.load(mainGuiConfiguration);
     }
@@ -102,9 +94,8 @@ public class ConfigurationManager {
         renameConfiguration = YamlConfiguration.loadConfiguration(renameFile);
 
         renameConfig.load(renameConfiguration);
-        fishConfig.load(fishConfiguration);
         confirmConfig.load(confirmConfiguration);
-        rankupConfig.load(rankupConfiguration, fishConfig);
+        rankupConfig.load(rankupConfiguration);
         globalConfig.load(globalConfiguration);
         mainGuiConfig.load(mainGuiConfiguration);
     }
@@ -128,10 +119,6 @@ public class ConfigurationManager {
 
     public ConfirmGuiConfig getConfirmConfig() {
         return confirmConfig;
-    }
-
-    public FishConfig getFishConfig() {
-        return fishConfig;
     }
 
     public RenameConfig getRenameConfig() {

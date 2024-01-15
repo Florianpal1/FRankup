@@ -45,7 +45,11 @@
           <relocations>
             <relocation>
               <pattern>co.aikar.commands</pattern>
-              <shadedPattern>fr.florianpal.fauction.acf</shadedPattern>
+              <shadedPattern>fr.florianpal.frankup.acf</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>de.tr7zw.changeme.nbtapi</pattern>
+              <shadedPattern>fr.florianpal.frankup.nbtapi</shadedPattern>
             </relocation>
           </relocations>
         </configuration>
@@ -84,6 +88,10 @@
     <repository>
       <id>eco-repo</id>
       <url>https://repo.auxilor.io/repository/maven-public/</url>
+    </repository>
+    <repository>
+      <id>codemc-repo</id>
+      <url>https://repo.codemc.org/repository/maven-public/</url>
     </repository>
   </repositories>
   <dependencies>

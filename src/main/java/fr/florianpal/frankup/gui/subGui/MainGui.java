@@ -66,7 +66,6 @@ public class MainGui extends AbstractGui implements GuiInterface {
 
     public void initializeItems() {
 
-
         String titleInv = FormatUtil.format(mainGuiConfig.getNameGui().replace("{DisplayName}", rank.getDisplayName()));
         inv = Bukkit.createInventory(this, mainGuiConfig.getSize(), titleInv);
 
@@ -157,7 +156,7 @@ public class MainGui extends AbstractGui implements GuiInterface {
                 }
 
                 String displayName = "";
-                if(need.getRankType() == RankType.SKILLS) {
+                if(need.getRankType() == RankType.  SKILLS) {
                     displayName = AureliumAPI.getPlugin().getSkillRegistry().getSkill(need.getItemName().toUpperCase()).getDisplayName(Locale.FRANCE);
                 } else {
                     if(plugin.getConfigurationManager().getRenameConfig().getRenameMap().containsKey(need.getItemName())) {

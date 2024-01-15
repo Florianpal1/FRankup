@@ -28,7 +28,7 @@ public class RankupConfig {
 
     private LinkedHashMap<String, Rank> ranks;
 
-    public void load(Configuration config, FishConfig fishConfig) {
+    public void load(Configuration config) {
         ranks = new LinkedHashMap<>();
 
         for (String index : config.getConfigurationSection("ranks").getKeys(false)) {
@@ -40,7 +40,7 @@ public class RankupConfig {
             LinkedHashMap<String, Need> needsMap = new LinkedHashMap<>();
             List<String> needsList = config.getStringList("ranks." + index + ".needs");
             for(String need : needsList) {
-                needsMap.put(need, new Need(need, fishConfig));
+                needsMap.put(need, new Need(need));
             }
 
             List<String> results = config.getStringList("ranks." + index + ".results");
