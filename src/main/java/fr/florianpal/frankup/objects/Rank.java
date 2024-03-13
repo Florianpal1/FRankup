@@ -9,9 +9,7 @@ import fr.florianpal.fentreprise.objects.Entreprise;
 import fr.florianpal.frankup.FRankup;
 import fr.florianpal.frankup.enums.RankType;
 import me.clip.placeholderapi.PlaceholderAPI;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -113,7 +111,7 @@ public class Rank {
                     }
                 }
                 if(!take) {
-                    return false;
+                    return take;
                 }
             } else if (entry.getValue().getRankType() == RankType.TOTAL_SKILLS) {
                 if(AureliumAPI.getTotalLevel(player) < entry.getValue().getQuantity()) {

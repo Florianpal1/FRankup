@@ -81,6 +81,7 @@ public class ConfigurationManager {
 
         renameConfig.load(renameConfiguration);
         rankupConfig.load(rankupConfiguration);
+        confirmConfig.load(confirmConfiguration);
         globalConfig.load(globalConfiguration);
         mainGuiConfig.load(mainGuiConfiguration);
     }
